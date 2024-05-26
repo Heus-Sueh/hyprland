@@ -1,0 +1,34 @@
+# image will be published to ghcr.io/<user>/<name>
+name: hyprland-nvidia
+# description will be included in the image's metadata
+description: This is my personal OS image.
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/base-nvidia
+image-version: 40 # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  # Files
+  - type: files
+    files:
+      - usr:
+          /usr
+          # copies config/files/usr into your image's /usr.
+          # put configuration files you want in /etc/ on a booted system
+          # in /usr/etc/ in the image. read more in files module reference.
+  # ------------------------------------------------------
+  - from-file: rpm-ostree.yml
+  - from-file: fonts.yml
+  - from-file: default-flatpaks.yml
+  # ------------------------------------------------------
+  # SystemD
+  - type: systemd
+    system:
+      enabled:
+        - sddm-boot.service
+  # ------------------------------------------------------
+  # Signing
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  # ------------------------------------------------------
