@@ -50,6 +50,7 @@ install:
   - gvfs-mtp
   - gvfs-smb
   - file-roller
+  - udiskie
   - imv
   - unrar
   # Screenshot
@@ -94,5 +95,4 @@ install:
   - kwallet
   - pam-kwallet
   # Others
-  - udiskie
 remove:

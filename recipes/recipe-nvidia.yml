@@ -13,9 +13,9 @@ modules:
   # Files
   - type: files
     files:
-      - source: usr
+      - source: system/usr
         destination: /usr
-      - source: etc
+      - source: system/etc
         destination: /etc
   # ----------------------------------------------------------------------------------------------------------------------------
   - from-file: pkgs.yml

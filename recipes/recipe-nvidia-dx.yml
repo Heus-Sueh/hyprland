@@ -1,10 +1,12 @@
 # image will be published to ghcr.io/<user>/<name>
-name: hyprland-dx
+name: hyprland-nvidia-dx
 # description will be included in the image's metadata
 description: This is my personal OS image.
+
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/base-main
+base-image: ghcr.io/ublue-os/base-nvidia
 image-version: 40 # latest is also supported if you want new updates ASAP
+
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
@@ -15,12 +17,12 @@ modules:
         destination: /usr
       - source: system/etc
         destination: /etc
-  # ---------------------------------------------------------------------------------------------------------------------------
+  # ----------------------------------------------------------------------------------------------------------------------------
   - from-file: pkgs.yml
   - from-file: fonts.yml
   - from-file: default-flatpaks.yml
   - from-file: dx.yml
-  # ---------------------------------------------------------------------------------------------------------------------------
+  # ----------------------------------------------------------------------------------------------------------------------------
   # SystemD
   - type: systemd
     system:
