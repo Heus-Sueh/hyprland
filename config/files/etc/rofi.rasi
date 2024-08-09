@@ -1,0 +1,182 @@
+* {
+  primary: #b7c4ff;
+  primary-fixed: #dce1ff;
+  primary-fixed-dim: #b7c4ff;
+  on-primary: #0f2976;
+  on-primary-fixed: #001551;
+  on-primary-fixed-variant: #2b418d;
+  primary-container: #4257a4;
+  on-primary-container: #ffffff;
+  secondary: #bec5ea;
+  secondary-fixed: #dce1ff;
+  secondary-fixed-dim: #bec5ea;
+  on-secondary: #282f4c;
+  on-secondary-fixed: #121a36;
+  on-secondary-fixed-variant: #3e4564;
+  secondary-container: #3e4564;
+  on-secondary-container: #c2c9ee;
+  tertiary: #ffb867;
+  tertiary-fixed: #ffddba;
+  tertiary-fixed-dim: #ffb867;
+  on-tertiary: #482900;
+  on-tertiary-fixed: #2b1700;
+  on-tertiary-fixed-variant: #673d00;
+  tertiary-container: #845000;
+  on-tertiary-container: #ffffff;
+  error: #ffb4ab;
+  on-error: #690005;
+  error-container: #93000a;
+  on-error-container: #ffdad6;
+  surface: #121318;
+  on-surface: #e3e1e9;
+  on-surface-variant: #c5c5d3;
+  outline: #8f909c;
+  outline-variant: #444651;
+  shadow: #000000;
+  scrim: #000000;
+  inverse-surface: #e3e1e9;
+  inverse-on-surface: #2f3036;
+  inverse-primary: #4559a7;
+  surface-dim: #121318;
+  surface-bright: #38393e;
+  surface-container-lowest: #0d0e13;
+  surface-container-low: #1a1b20;
+  surface-container: #1f1f24;
+  surface-container-high: #292a2f;
+  surface-container-highest: #34343a;
+  accent: @primary;
+  text: @on-primary;
+  normal: @secondary-fixed;
+  on-normal: @on-secondary-fixed;
+  selected: @primary;
+  on-selected: @on-primary;
+  border: @primary;
+  background: @surface;
+  background-alt: @surface-container;
+  handle: @primary;
+  placeholder: @primary;
+  on-search: @primary;
+}
+
+configuration {
+    show-icons: true;
+    display-drun: "";
+    drun-display-format: "{icon} {name}";
+    disable-history: false;
+    click-to-exit: false;
+    location: 0;
+}
+
+window {
+    border-radius: 8px;
+    width: 500px;
+    anchor: center;
+    x-offset: 0;
+    y-offset: 0;
+    background-color: @background;
+    border-color: @border;
+}
+
+prompt {
+    enabled: true;
+    padding: 8px;
+    text-color: @on-search;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: "";
+    border-radius: 100%;
+    padding: 8px 12px 8px 12px;
+    text-color: @on-search;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @placeholder;
+    blink: true;
+    background-color: @background;
+    border: 0px 0px 2px 0px;
+    border-radius: 10px;
+    padding: 8px;
+    text-color: @primary;
+    border-color: @border;
+}
+
+inputbar {
+    children: [ textbox-prompt-colon, prompt, entry ];
+    expand: false;
+    border: 0px;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    position: center;
+}
+
+case-indicator {
+    spacing: 0;
+}
+
+listview {
+    enabled: true;
+    columns: 1;
+    lines: 5;
+    spacing: 4px;
+    cycle: false;
+    dynamic: true;
+    layout: vertical;
+    background-color: @background;
+    padding: 10px;
+    border-radius: 8px;
+    border-color: transparent;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 15px;
+    padding: 15px;
+    background-color: @background-alt;
+    border-radius: 8px;
+}
+
+element {
+    enabled: true;
+    orientation: horizontal;
+    border-radius: 4px;
+    padding: 6px 6px 6px 6px;
+}
+
+element-icon {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    size: 36px;
+    border: 0px;
+}
+
+element alternate.normal,
+element normal.active,
+element normal.normal {
+  background-color: @secondary-fixed;
+  text-color: @on-secondary-fixed;
+}
+
+element selected.active,
+element selected.normal {
+  background-color: @selected;
+  text-color: @on-selected;
+}
+
+button.selected {
+    background-color: @selected;
+    text-color:       @on-selected;
+}
+
+scrollbar {
+    background-color: @background-alt;
+    width:        4px;
+    border:       0;
+    handle-width: 8px;
+    handle-color: @handle;
+    padding:      0;
+}
+

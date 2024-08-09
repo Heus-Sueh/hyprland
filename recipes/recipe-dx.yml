@@ -1,5 +1,5 @@
 # image will be published to ghcr.io/<user>/<name>
-name: hyprland
+name: hyprland-dx
 # description will be included in the image's metadata
 description: This is my personal OS image.
 # the base image to build on top of (FROM) and the version tag to use
@@ -16,9 +16,10 @@ modules:
       - source: etc
         destination: /etc
   # ---------------------------------------------------------------------------------------------------------------------------
-  - from-file: pkgs.yml
+  - from-file: rpm-ostree.yml
   - from-file: fonts.yml
   - from-file: default-flatpaks.yml
+  - from-file: dx.yml
   # ---------------------------------------------------------------------------------------------------------------------------
   # SystemD
   - type: systemd

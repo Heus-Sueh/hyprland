@@ -4,20 +4,20 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/erikreider/SwayNotificationCenter/repo/fedora-40/erikreider-SwayNotificationCenter-fedora-40.repo
   - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-40/solopasha-hyprland-fedora-40.repo
 install:
+  # bar
+  - waybar
   # launcher
   - rofi
   # environment
+  - power-profiles-daemon
   - xorg-x11-server-Xwayland
   - xwaylandvideobridge
   - polkit
-  - lxpolkit
+  - xfce-polkit
   - xdg-user-dirs
   - dbus-tools
   - dbus-daemon
   - wl-clipboard
-  - gnome-keyring
-  - pavucontrol
-  - playerctl
   - vulkan-validation-layers
   - vulkan-tools
   - google-noto-emoji-fonts
@@ -27,33 +27,34 @@ install:
   - qt5ct
   - qt6ct
   - kvantum
-  # sound
+  # Audio & Media
+  - pavucontrol
+  - playerctl
   - wireplumber
   - pipewire
   - pamixer
-  # networking
+  - pulseaudio-utils
+  # Network & Bluetooth
   - network-manager-applet
   - NetworkManager-openvpn
   - NetworkManager-openconnect
   - bluez
   - bluez-tools
   - blueman
-  # file manager
-  - kde-partitionmanager
-  - dolphin
-  - dolphin-plugins
-  - kde-cli-tools
-  - ffmpegthumbs
-  - kf5-kservice
-  - ark
+  # File Manager
+  - nautilus
+  - gvfs-fuse
+  - gvfs-archive
+  - gvfs-gphoto2
+  - gvfs-nfs
+  - gvfs-mtp
+  - gvfs-smb
+  - file-roller
   - imv
-  - unrar-free
-  # screenshot
+  - unrar
+  # Screenshot
   - slurp
   - grim
-  # other
-  - udiskie
-  - neovim
   # display
   - wlr-randr
   - wlsunset
@@ -61,21 +62,16 @@ install:
   - kanshi
   - wlogout
   # terminal
-  - zsh
   - alacritty
-  - zoxide
-  - yq
-  - fd-find
-  - eza
-  - direnv
   - stow
-  - android-tools
   # notifications
-  - SwayNotificationCenter
+  - dunst
+  # - SwayNotificationCenter
   # clipboard
   - cliphist
   # theme and GUI
   - adwaita-qt5
+  - fontawesome-fonts-all
   - gnome-themes-extra
   - gnome-icon-theme
   - paper-icon-theme
@@ -95,4 +91,8 @@ install:
   - qt5-qtgraphicaleffects
   - qt5-qtquickcontrols2
   - qt5-qtsvg
+  - kwallet
+  - pam-kwallet
+  # Others
+  - udiskie
 remove:
