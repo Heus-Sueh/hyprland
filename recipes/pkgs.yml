@@ -92,7 +92,10 @@ install:
   - qt5-qtgraphicaleffects
   - qt5-qtquickcontrols2
   - qt5-qtsvg
+  - qt6-qtsvg
+  - qt6-qt5compat
   - kwallet
   - pam-kwallet
   # Others
 remove:
+  - kitty

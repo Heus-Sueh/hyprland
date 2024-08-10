@@ -1,0 +1,5 @@
+ublue_variants:
+  - label: heus-sueh/hyprland
+    ks: /kickstart/ublue-os.ks
+    flavors:
+      - label: hyprland

@@ -15,7 +15,7 @@ modules:
   - from-file: common-files.yml
   - from-file: fonts.yml
   - from-file: default-flatpaks.yml
-  - from-file: dx.yml
+  - from-file: developer.yml
   # ----------------------------------------------------------------------------------------------------------------------------
   # SystemD
   - type: systemd

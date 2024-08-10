@@ -48,6 +48,10 @@ window#waybar.hidden {
   color: @primary;
 }
 
+#workspaces button.active {
+  color: @primary;
+}
+
 #workspaces button:hover {
   box-shadow: inherit;
   text-shadow: inherit;
