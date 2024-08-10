@@ -63,7 +63,7 @@ install:
   - kanshi
   - wlogout
   # terminal
-  - alacritty
+  # - alacritty
   - stow
   # notifications
   - dunst
@@ -98,4 +98,3 @@ install:
   - pam-kwallet
   # Others
 remove:
-  - kitty
