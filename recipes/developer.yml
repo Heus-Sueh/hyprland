@@ -22,3 +22,16 @@ modules:
     - android-tools
     # Net and VPN
     - tailscale
+    # Virtual Machine
+    - libvirt
+    - virt-manager
+    - virt-viewer
+    - qemu
+    - qemu-char-spice
+    - qemu-device-display-virtio-gpu
+    - qemu-device-display-virtio-vga
+    - qemu-device-usb-redirect
+    - qemu-img
+    - qemu-system-x86-core
+    - qemu-user-binfmt
+    - qemu-user-static
