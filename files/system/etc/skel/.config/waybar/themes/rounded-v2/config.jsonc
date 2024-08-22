@@ -2,7 +2,7 @@
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
+  "modules-center": ["hyprland/window"],
   "modules-right": [
     "pulseaudio",
     "backlight",
@@ -11,6 +11,7 @@
     "tray",
     // "custom/swaync",
     "custom/notification",
+    "clock",
     "custom/power",
   ],
   "hyprland/workspaces": {
