@@ -1,5 +1,4 @@
 modules:
-  # some good packages
   - type: rpm-ostree
     install:
       - neovim
@@ -36,22 +35,22 @@ modules:
       - qemu-user-binfmt
       - qemu-user-static
   # SystemD
-  - type: systemd
-    system:
-      enabled:
-        - libvirtd
-        - virtqemud.socket
-        - virtnetworkd.socket
-        - virtstoraged.socket
-        - virtnodedevd.socket
-      disabled:
-        # - flatpak-system-update.timer
-    user:
-      enabled:
-        # - my-custom.service
-      disabled:
-        # - flatpak-user-update.timer
-  # ----------------------------------------------------------------------- #
-  - type: script
-    snippets:
-      # - "curl https://example.com/examplebinary > /usr/bin/examplebinary" # example: download binary
+  # - type: systemd
+  #   system:
+  #     enabled:
+  #       - libvirtd
+  #       - virtqemud.socket
+  #       - virtnetworkd.socket
+  #       - virtstoraged.socket
+  #       - virtnodedevd.socket
+  #     disabled:
+  #       # - flatpak-system-update.timer
+  #   user:
+  #     enabled:
+  #       # - my-custom.service
+  #     disabled:
+  #       # - flatpak-user-update.timer
+  # # ----------------------------------------------------------------------- #
+  # - type: script
+  #   snippets:
+  #     # - "curl https://example.com/examplebinary > /usr/bin/examplebinary" # example: download binary
