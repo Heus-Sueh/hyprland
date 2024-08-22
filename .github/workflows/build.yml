@@ -24,7 +24,9 @@ jobs:
         recipe:
           # !! Add your recipes here
           - recipe.yml
+          - recipe-dx.yml
           - recipe-nvidia.yml
+          - recipe-dx-nvidia.yml
           - recipe-vm.yml
     steps:
       # the build is fully handled by the reusable github action

@@ -1,9 +1,0 @@
-modules:
-  # some good packages
-  - type: rpm-ostree
-    install:
-      - gamescope
-      - gamemode
-      - mangohud
-      - lutris
-      - umu-launcher
