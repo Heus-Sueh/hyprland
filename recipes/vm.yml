@@ -1,10 +1,10 @@
 modules:
   # some good packages
-  type: rpm-ostree
-  install:
-    - open-vm-tools
-    - open-vm-tools-desktop
-    - qemu-guest-agent
-    - virtualbox-guest-additions
-    - spice-vdagent
-    - spice-webdavd
+  - type: rpm-ostree
+    install:
+      - open-vm-tools
+      - open-vm-tools-desktop
+      - qemu-guest-agent
+      - virtualbox-guest-additions
+      - spice-vdagent
+      - spice-webdavd
