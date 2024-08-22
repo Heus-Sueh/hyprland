@@ -10,10 +10,10 @@ image-version: 40 # latest is also supported if you want new updates ASAP
 modules:
   # ---------------------------------------------------------------------------------------------------------------------------
   - from-file: pkgs.yml
-  - from-file: vm.yml
   - from-file: common-files.yml
   - from-file: fonts.yml
   - from-file: default-flatpaks.yml
+  - from-file: vm.yml
   # ---------------------------------------------------------------------------------------------------------------------------
   # SystemD
   - type: systemd
