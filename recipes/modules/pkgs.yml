@@ -7,7 +7,7 @@ install:
   # bar
   - waybar
   # launcher
-  - rofi
+  - rofi-wayland
   # environment
   - power-profiles-daemon
   - xorg-x11-server-Xwayland
