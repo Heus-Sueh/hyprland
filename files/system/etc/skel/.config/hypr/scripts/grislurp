@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Function to display notifications
+notify() {
+	local msg=$1
+	notify-send "Screenshot" "$msg"
+}
+
+# Function to copy the image to the clipboard
+copy_to_clipboard() {
+	local file=$1
+	wl-copy <"$file"
+}
+
+# Function to get geometry for capturing a screen
+get_geometry() {
+	local mode=$1
+	local geometry
+
+	if [[ "$mode" == "area" ]]; then
+		geometry=$(slurp)
+	elif [[ "$mode" == "screen" ]]; then
+		# Check if Hyprland is running
+		if pgrep -x "Hyprland" >/dev/null; then
+			geometry=$(hyprctl monitors -j | jq -r '.[0] | "\(.x),\(.y) \(.width)x\(.height)"')
+		else
+			geometry=$(swaymsg -t get_outputs | jq -r '.[0].rect | "\(.x),\(.y) \(.width)x\(.height)"')
+		fi
+	else
+		echo "Invalid mode: $mode"
+		exit 1
+	fi
+
+	echo "$geometry"
+}
+
+# Main function
+grislurp() {
+	local mode=$1
+	local action=$2
+	local save_path=${3:-}
+
+	# Set default save path if not provided
+	if [[ -z "$save_path" ]]; then
+		pictures_path=$(xdg-user-dir PICTURES)
+		save_path="$pictures_path/Screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S_no_watermark").png"
+	fi
+
+	local geometry
+	geometry=$(get_geometry "$mode")
+
+	# Capture the screenshot using grim
+	if [[ "$action" == "copy" ]]; then
+		grim -g "$geometry" - | wl-copy
+		notify "Screenshot copied to clipboard"
+	else
+		grim -g "$geometry" "$save_path"
+		if [[ "$action" == "save" ]]; then
+			notify "Screenshot saved to $save_path"
+		elif [[ "$action" == "savecopy" ]]; then
+			notify "Screenshot saved and copied to clipboard"
+			copy_to_clipboard "$save_path"
+		else
+			echo "Invalid action: $action"
+			exit 1
+		fi
+	fi
+}
+
+# Check if the --notify flag is present
+if [[ "$1" == "--notify" ]]; then
+	shift
+fi
+
+# Parameters
+action=$1
+mode=$2
+save_path=${3:-}
+
+# Call the main function
+grislurp "$mode" "$action" "$save_path"

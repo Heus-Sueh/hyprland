@@ -21,12 +21,6 @@ install:
   - vulkan-validation-layers
   - vulkan-tools
   - google-noto-emoji-fonts
-  # QT Stuff
-  - qt5-qtwayland
-  - qt6-qtwayland
-  - qt5ct
-  - qt6ct
-  - kvantum
   # Audio & Media
   - pavucontrol
   - playerctl
@@ -42,7 +36,9 @@ install:
   - bluez-tools
   - blueman
   # File Manager
-  - nautilus
+  - nemo
+  - nemo-extensions
+  - folder-color-switcher-nemo
   - gvfs-fuse
   - gvfs-archive
   - gvfs-gphoto2
@@ -70,7 +66,10 @@ install:
   # - SwayNotificationCenter
   # clipboard
   - cliphist
-  # theme and GUI
+  # Themes and Icons
+  - qt5ct
+  - qt6ct
+  - kvantum
   - adwaita-qt5
   - fontawesome-fonts-all
   - gnome-themes-extra
@@ -89,11 +88,14 @@ install:
   # SDDM
   - sddm
   - sddm-themes
-  - qt5-qtgraphicaleffects
-  - qt5-qtquickcontrols2
+  # QT Stuff
+  - qt5-qtwayland
+  - qt6-qtwayland
   - qt5-qtsvg
   - qt6-qtsvg
   - qt6-qt5compat
+  - qt5-qtgraphicaleffects
+  - qt5-qtquickcontrols2
   - kwallet
   - pam-kwallet
   # Others

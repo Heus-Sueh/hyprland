@@ -1,1 +1,4 @@
-/usr/share/applications/org.codeberg.dnkl.foot.desktop
+[Desktop Entry]
+Type=Application
+TryExec=foot
+Exec=foot
