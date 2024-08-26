@@ -14,6 +14,8 @@ install:
   - xwaylandvideobridge
   - polkit
   - xfce-polkit
+  - gnome-keyring
+  - gnome-keyring-pam
   - xdg-user-dirs
   - dbus-tools
   - dbus-daemon
@@ -36,9 +38,8 @@ install:
   - bluez-tools
   - blueman
   # File Manager
-  - nemo
-  - nemo-extensions
-  - folder-color-switcher-nemo
+  - thunar
+  - xdg-desktop-portal-xapp
   - gvfs-fuse
   - gvfs-archive
   - gvfs-gphoto2
@@ -49,6 +50,7 @@ install:
   - udiskie
   - imv
   - unrar
+  - zenity
   # Screenshot
   - slurp
   - grim
@@ -71,6 +73,7 @@ install:
   - qt6ct
   - kvantum
   - adwaita-qt5
+  - adw-gtk3-theme
   - fontawesome-fonts-all
   - gnome-themes-extra
   - gnome-icon-theme
@@ -96,7 +99,5 @@ install:
   - qt6-qt5compat
   - qt5-qtgraphicaleffects
   - qt5-qtquickcontrols2
-  - kwallet
-  - pam-kwallet
   # Others
 remove:
