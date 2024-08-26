@@ -16,6 +16,8 @@ install:
   - xfce-polkit
   - gnome-keyring
   - gnome-keyring-pam
+  - xdg-desktop-portal
+  - xdg-desktop-portal-gtk
   - xdg-user-dirs
   - dbus-tools
   - dbus-daemon
@@ -39,7 +41,8 @@ install:
   - blueman
   # File Manager
   - thunar
-  - xdg-desktop-portal-xapp
+  - thunar-archive-plugin
+  - thunar-volman
   - gvfs-fuse
   - gvfs-archive
   - gvfs-gphoto2
