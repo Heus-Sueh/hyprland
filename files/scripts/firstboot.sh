@@ -23,11 +23,11 @@ run_modules() {
 
 	echo "Running theme setup script..."
 	# Example of running an external script
-	sudo flatpak override --filesystem=xdg-data/themes
-	sudo flatpak override --filesystem=xdg-data/icons
-	sudo flatpak override --filesystem=xdg-config/gtk-3.0
-	sudo flatpak override --filesystem=xdg-config/gtk-4.0
-	sudo flatpak override --filesystem=xdg-config/Kvantum
+	flatpak override --filesystem=xdg-data/themes
+	flatpak override --filesystem=xdg-data/icons
+	flatpak override --filesystem=xdg-config/gtk-3.0
+	flatpak override --filesystem=xdg-config/gtk-4.0
+	flatpak override --filesystem=xdg-config/Kvantum
 	# ./setup_theme.sh
 
 	echo "Initial setup completed!"
