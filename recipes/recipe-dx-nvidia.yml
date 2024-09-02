@@ -9,7 +9,7 @@ modules:
   - from-file: modules/common-files.yml
   - from-file: modules/fonts.yml
   - from-file: modules/default-flatpaks.yml
-  # - from-file: modules/common-scripts.yml
+  - from-file: modules/common-scripts.yml
   # ----------------------------------------------------------------------------------------------------------------------------
   # Scripts
   - type: script

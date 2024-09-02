@@ -8,12 +8,14 @@ modules:
       - neovim
       - code
       - gcc
+      - clang
       - genisoimage
       - ddcutil
       - flatpak-builder
       # Terminal Tools
       - fastfetch
       - tealdeer
+      - bat
       - ugrep
       - ripgrep
       - zoxide
