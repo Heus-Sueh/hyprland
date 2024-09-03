@@ -11,11 +11,19 @@ modules:
   - from-file: modules/vm.yml
   - from-file: modules/common-scripts.yml
   # ---------------------------------------------------------------------------------------------------------------------------
+  # Scripts
+  - type: script
+    snippets:
+      # - "mv example example2"
+    scripts:
+      # - example.sh
+  # ---------------------------------------------------------------------------------------------------------------------------
   # SystemD
   - type: systemd
     system:
       enabled:
         - sddm-boot.service
+        - firstboot.service
   # ----------------------------------------------------------------------------------------------------------------------------
   # Signing
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
