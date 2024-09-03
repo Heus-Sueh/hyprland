@@ -30,10 +30,10 @@ If you want to see the complete list, see this [file](https://github.com/Heus-Su
 ### To rebase an existing atomic Fedora installation to the latest build:
 
 > [!IMPORTANT]
-> The **only** supported tag is `latest`
+> The **only** supported tag is `latest`.
 
 > [!IMPORTANT]
-> The two reboots described below are not optional. During installation, the initial boot into hyprland will provision the required sddm user. This is a one time step, all subsequent boots will succeed.)*
+> The two reboots described below are not optional. During installation, the initial boot into hyprland will provision the required sddm user. This is a one time step, all subsequent boots will succeed.
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
