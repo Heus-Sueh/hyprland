@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+######## NOT WORKING FOR NOW ################
+
 # File to indicate that the script has already run
 FIRSTBOOT_FILE="$HOME/.config/firstboot/firstboot_done"
 

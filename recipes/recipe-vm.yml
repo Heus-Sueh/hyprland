@@ -17,13 +17,14 @@ modules:
       # - "mv example example2"
     scripts:
       # - example.sh
+  - type: yafti
   # ---------------------------------------------------------------------------------------------------------------------------
   # SystemD
   - type: systemd
     system:
       enabled:
         - sddm-boot.service
-        - firstboot.service
+        # - firstboot.service
   # ----------------------------------------------------------------------------------------------------------------------------
   # Signing
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
