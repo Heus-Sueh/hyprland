@@ -3,6 +3,9 @@
 This repository uses the [BlueBuild](https://blue-build.org/) template and creates an opinionated image for the Hyprland Window Manager.
 ![Hyprland](https://take-me-to.space/YTTwG8KV.png)
 
+> [!CAUTION]
+Experimental image, not yet fully ready for daily use; bugs still need to be fixed, and some files need to be added.
+
 ## What was changed?
 - Set a nice SDDM
 - Set a nice Waybar
