@@ -22,13 +22,14 @@ run_modules() {
 	xdg-user-dirs-update
 
 	echo "Running theme setup script..."
-	# Example of running an external script
-	flatpak override --filesystem=xdg-data/themes
-	flatpak override --filesystem=xdg-data/icons
-	flatpak override --filesystem=xdg-config/gtk-3.0
-	flatpak override --filesystem=xdg-config/gtk-4.0
-	flatpak override --filesystem=xdg-config/Kvantum
-	# ./setup_theme.sh
+	# Commands that require root privileges
+	pkexec bash -c '
+        flatpak override --filesystem=xdg-data/themes
+        flatpak override --filesystem=xdg-data/icons
+        flatpak override --filesystem=xdg-config/gtk-3.0
+        flatpak override --filesystem=xdg-config/gtk-4.0
+        flatpak override --filesystem=xdg-config/Kvantum
+    '
 
 	echo "Initial setup completed!"
 }
@@ -39,14 +40,13 @@ if [[ ! -f "$FIRSTBOOT_FILE" ]]; then
 	run_modules
 
 	# Create the file to indicate that the script has run
+	mkdir -p "$(dirname "$FIRSTBOOT_FILE")"
+
+	# Create the file to indicate that the script has run
 	touch "$FIRSTBOOT_FILE"
 
 	# Generate and store the hash in the firstboot file
 	generate_hash
-
-	# Disable the systemd service after successful execution
-	echo "Disabling firstboot systemd service..."
-	systemctl disable firstboot.service
 
 else
 	echo "First boot script has already run. Nothing to do."

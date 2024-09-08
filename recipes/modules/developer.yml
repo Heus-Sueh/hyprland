@@ -3,8 +3,10 @@ modules:
     repos:
       - vscode.repo
       - docker-ce.repo
+      - mise.repo
     install:
       - gh
+      - mise
       - neovim
       - code
       - gcc

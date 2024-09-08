@@ -10,12 +10,7 @@ modules:
   - from-file: modules/fonts.yml
   - from-file: modules/default-flatpaks.yml
   - from-file: modules/common-scripts.yml
-  # ---------------------------------------------------------------------------------------------------------------------------
-  # SystemD
-  - type: systemd
-    system:
-      enabled:
-        - sddm-boot.service
+  - from-file: modules/systemd.yml
   # ----------------------------------------------------------------------------------------------------------------------------
   # Signing
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
