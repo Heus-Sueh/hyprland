@@ -39,19 +39,19 @@ If you want to see the complete list, see this [file](https://github.com/Heus-Su
 > The two reboots described below are not optional. During installation, the initial boot into hyprland will provision the required sddm user. This is a one time step, all subsequent boots will succeed.
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  ```
+  ```sh
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/heus-sueh/$IMAGE_NAME:latest
   ```
 - Reboot to complete the rebase:
-  ```
+  ```sh
   systemctl reboot
   ```
 - Then rebase to the signed image, like so:
-  ```
+  ```sh
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/heus-sueh/$IMAGE_NAME:latest
   ```
 - Reboot again to complete the installation
-  ```
+  ```sh
   systemctl reboot
   ```
 
@@ -79,6 +79,6 @@ ujust configure-nvidia-optimus
 If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
 
 
-```bash
+```sh
 cosign verify --key cosign.pub ghcr.io/heus-sueh/hyprland
 ```
