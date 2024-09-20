@@ -50,6 +50,7 @@ install:
   - gvfs-mtp
   - gvfs-smb
   - file-roller
+  - trash-cli
   - udiskie
   - imv
   - unrar
