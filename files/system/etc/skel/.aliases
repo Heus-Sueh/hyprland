@@ -1,0 +1,118 @@
+#!/usr/bin/env bash
+# Shortcuts
+alias profile="$EDITOR ~/.profile"
+alias bashrc="$EDITOR ~/.bashrc"
+alias zshrc="$EDITOR ~/.zshrc"
+# alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+alias clickpaste='sleep 3; xdotool type "$(xclip -o -selection clipboard)"'
+
+# Change directory aliases
+if [ "$(command -v zoxide)" ]; then
+	alias cd="z"
+fi
+
+# Remove a directory and all files
+alias rmd='/bin/rm  --recursive --force --verbose '
+
+# ls aliases
+if [ "$(command -v eza)" ]; then
+	alias ll='eza -l --icons=auto --group-directories-first'
+	alias l.='eza -d .*'
+	alias ls='eza'
+	alias l1='eza -1'
+fi
+
+if [ "$(command -v fd)" ]; then
+	alias find="fd"
+fi
+
+if [ "$(command -v bat)" ]; then
+	alias cat="bat"
+fi
+
+# ugrep for grep
+if [ "$(command -v ug)" ]; then
+	alias grep='ug'
+	alias egrep='ug -E'
+	alias fgrep='ug -F'
+	alias xzgrep='ug -z'
+	alias xzegrep='ug -zE'
+	alias xzfgrep='ug -zF'
+fi
+
+# Check if ripgrep is installed
+if [ "$(command -v rg)" ]; then
+    # Alias grep to rg if ripgrep is installed
+    alias grep='rg'
+else
+    # Alias grep to /usr/bin/grep with GREP_OPTIONS if ripgrep is not installed
+    alias grep="/usr/bin/grep $GREP_OPTIONS"
+fi
+unset GREP_OPTIONS
+
+if [ "$(command -v trash)" ]; then
+	alias rm='trash -v'
+fi
+
+case "$(command -v apt pacman dnf rpm-ostree 2>/dev/null | head -n 1)" in
+*apt)
+	alias pkg='sudo apt'
+	;;
+*pacman)
+	alias pkg='sudo pacman'
+	;;
+*dnf)
+	alias pkg='sudo dnf'
+	;;
+*rpm-ostree)
+	alias pkg='rpm-ostree'
+	;;
+*)
+	echo "No supported package manager found."
+	;;
+esac
+
+alias home='cd ~'
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# Always interactive
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias mkdir='mkdir -p'
+alias ps='ps auxf'
+alias ping='ping -c 10'
+alias less='less -R'
+alias h="history | grep "
+alias f="find . | grep "
+alias openports='netstat -nape --inet'
+alias unexport="unset"
+alias readf="less"
+alias seef="bat"
+alias help="man"
+alias cls="clear"
+alias xkill="pkill -i"
+alias pkg="rpm-ostree"
+# alias chmod commands
+alias mkexe='chmod a+x'
+alias mx='chmod a+x'
+alias 000='chmod -R 000'
+alias 644='chmod -R 644'
+alias 666='chmod -R 666'
+alias 755='chmod -R 755'
+alias 777='chmod -R 777'
+# Alias's for archives
+alias mktar='tar -cvf'
+alias mkbz2='tar -cvjf'
+alias mkgz='tar -cvzf'
+alias untar='tar -xvf'
+alias unbz2='tar -xvjf'
+alias ungz='tar -xvzf'
+# Nvidia
+alias nrun='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
+# Others
+

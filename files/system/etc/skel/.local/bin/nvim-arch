@@ -1,0 +1,15 @@
+#!/bin/sh
+
+container_name="nvim-arch"
+
+# Verifica se o caminho foi passado como argumento
+if [ -z "$1" ]; then
+	echo "Usage: $0 <path>"
+	exit 1
+fi
+
+# Resolve o caminho absoluto do argumento
+real_path=$(realpath "$1")
+
+# Entra no container e executa o nvim com o caminho passado
+distrobox-enter -n "$container_name" -- nvim "$real_path"
