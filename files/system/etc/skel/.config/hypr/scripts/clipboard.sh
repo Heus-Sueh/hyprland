@@ -39,16 +39,25 @@ selected_item=$(echo "$clipboard_content" | rofi \
 	-kb-cancel Escape \
 	-theme "$theme")
 
-# If an item was selected, store it in the clipboard
+# If an item was selected, check if it is an image or text
 if [[ -n "$selected_item" ]]; then
 	case $clipboard_manager in
 	cliphist)
-		# Remove the index and leading whitespace before storing
-		selected_content=$(echo "$selected_item" | awk '{$1=""; print $0}' | sed 's/^ *//')
-		echo -ne "$selected_content" | cliphist store
-		wl-copy "$selected_content" # Copy only the selected text
+		# Check if the selected item is binary data (indicating an image)
+		if [[ "$selected_item" == *"[ binary data"* ]]; then
+			# Extract the index of the selected binary item
+			index=$(echo "$selected_item" | awk '{print $1}')
+			# Retrieve the image content
+			cliphist decode "$index" | wl-copy --type image/png
+		else
+			# Remove the index and leading whitespace before storing
+			selected_content=$(echo "$selected_item" | awk '{$1=""; print $0}' | sed 's/^ *//')
+			echo -ne "$selected_content" | cliphist store
+			wl-copy "$selected_content" # Copy only the selected text
+		fi
 		;;
 	clipman)
+		# Assuming clipman does not store images in history
 		echo -ne "$selected_item" | clipman store
 		;;
 	*)
