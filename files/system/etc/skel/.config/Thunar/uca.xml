@@ -5,7 +5,7 @@
 	<name>Open Terminal Here</name>
 	<submenu></submenu>
 	<unique-id>1708198417972650-1</unique-id>
-	<command>kitty</command>
+	<command>xdg-terminal-exec</command>
 	<description>Open the terminal in this directory</description>
 	<range></range>
 	<patterns>*</patterns>
