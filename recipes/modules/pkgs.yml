@@ -13,7 +13,6 @@ install:
   - xorg-x11-server-Xwayland
   - xwaylandvideobridge
   - polkit
-  - xfce-polkit
   - gnome-keyring
   - gnome-keyring-pam
   - xdg-desktop-portal
@@ -92,6 +91,7 @@ install:
   - hypridle
   - hyprlock
   - xdg-desktop-portal-hyprland
+  - hyprpolkitagent
   # SDDM
   - sddm
   - sddm-themes

@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+
+# if [[ ! -f "$HOME/.config/firstboot/firstboot_done" ]]; then
+#     bash "$HOME/.local/bin/firstboot.sh"
+# fi
+
 iatest=$(expr index "$-" i)
 
 # Source profile definitions
