@@ -1,0 +1,10 @@
+{
+  "custom/hyprpicker": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": "Color picker",
+    "icon-size": 24,
+    "spacing": 10,
+    "on-click": "wl-copy $(hyprpicker)",
+  }
+}

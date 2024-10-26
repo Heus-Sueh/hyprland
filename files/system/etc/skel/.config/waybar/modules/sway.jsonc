@@ -1,0 +1,34 @@
+{
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "sort-by-name": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+    },
+    "format": " {icon}",
+    "format-icons": {
+      "default": "",
+      "urgent": "",
+      "focused": "",
+    },
+  },
+  "sway/window": {
+    "format": "{}",
+    "max-length": 25,
+    "offscreen-css": true,
+    "offscreen-css-text": "(inactive)",
+  },
+  "sway/scratchpad": {
+    "format": "{icon} {count}",
+    "show-empty": false,
+    "format-icons": ["", ""],
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}",
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>",
+  },
+}

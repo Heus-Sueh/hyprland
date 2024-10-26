@@ -1,0 +1,67 @@
+{
+  "include": [
+    "~/.config/waybar/modules/hyprland.jsonc",
+    "~/.config/waybar/modules/battery.jsonc",
+    "~/.config/waybar/modules/backlight.jsonc",
+    "~/.config/waybar/modules/custom-music.jsonc",
+    "~/.config/waybar/modules/custom-colorpicker.jsonc",
+    "~/.config/waybar/modules/pulseaudio.jsonc",
+    "~/.config/waybar/modules/wlogout.jsonc",
+    "~/.config/waybar/modules/group-power.jsonc",
+  ],
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "keyboard-state",
+    "pulseaudio",
+    //"pulseaudio/slider",
+    "backlight",
+    "battery",
+    "blueman-applet",
+    "tray",
+    "idle_inhibitor",
+    "custom/hyprpicker",
+    "custom/notification",
+    //"group/powergroup",
+    "custom/wlogout",
+  ],
+  "clock": {
+    "timezone": "America/Sao_Paulo",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": " {:%d/%m/%Y}",
+    "format": "  {:%H:%M}",
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": "",
+    },
+  },
+  "custom/notification": {
+    "exec": "dunstctl get-pause-level",
+    "on-click": "dunstctl set-paused toggle",
+    "interval": "once",
+    "tooltip": true,
+    "tooltip-format": "Toggle notifications on/off",
+    "format": " ",
+    "format-alt": " ",
+    "icon-size": 24,
+    "spacing": 10,
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10,
+  },
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": "",
+    },
+  },
+}

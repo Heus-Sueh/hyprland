@@ -54,6 +54,7 @@ install:
   - imv
   - unrar
   - zenity
+  - system-config-printer
   # Screenshot
   - slurp
   - grim

@@ -1,0 +1,29 @@
+{
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "sort-by-name": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+    },
+    "format": " {icon}",
+    "format-icons": {
+      "default": "",
+      "urgent": "",
+      "focused": "",
+    },
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 25,
+    "offscreen-css": true,
+    "offscreen-css-text": "(inactive)",
+  },
+  "hyprland/submap": {
+    "format": "✌️ {}",
+    "max-length": 8,
+    "tooltip": false,
+  },
+}

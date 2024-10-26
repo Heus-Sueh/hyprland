@@ -1,0 +1,24 @@
+{
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " ",
+    "format-icons": {
+      "default": [" ", " ", "  "],
+    },
+    "scroll-step": 5, // "scroll-step": 1, // %, can be a float
+    "on-click": "pavucontrol",
+    "on-click-middle": "pamixer --default-source -m",
+  },
+  "pulseaudio/slider": {
+    "format": "{icon} {volume}%",
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "],
+    },
+    "scroll-step": 10, // "scroll-step": 1, // %, can be a float
+    "on-click-middle": "pamixer --default-source -m",
+  },
+}

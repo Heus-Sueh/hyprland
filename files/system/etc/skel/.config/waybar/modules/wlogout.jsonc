@@ -1,0 +1,9 @@
+{
+  "custom/wlogout": {
+    "tooltip": false,
+    "on-click": "wlogout",
+    "format": "",
+    "tooltip": true,
+    "tooltip-format": "Shutdown\nReboot\nLock\nLogout\nHibernate",
+  },
+}
