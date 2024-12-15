@@ -1,29 +1,25 @@
 # Native Packages
 type: rpm-ostree
-repos:
-  - https://copr.fedorainfracloud.org/coprs/erikreider/SwayNotificationCenter/repo/fedora-40/erikreider-SwayNotificationCenter-fedora-40.repo
-  - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-40/solopasha-hyprland-fedora-40.repo
 install:
-  # bar
-  - waybar
-  # launcher
-  - rofi-wayland
-  # environment
-  - power-profiles-daemon
+  # x11
   - xorg-x11-server-Xwayland
   - xwaylandvideobridge
+  # polkit
   - polkit
+  - xfce-polkit 
+  - fprintd-pam 
   - gnome-keyring
   - gnome-keyring-pam
+  # xdg
   - xdg-desktop-portal
   - xdg-desktop-portal-gtk
   - xdg-user-dirs
+  # dbus
   - dbus-tools
   - dbus-daemon
-  - wl-clipboard
+  # vulkan
   - vulkan-validation-layers
   - vulkan-tools
-  - google-noto-emoji-fonts
   # Audio & Media
   - pavucontrol
   - playerctl
@@ -35,6 +31,7 @@ install:
   - network-manager-applet
   - NetworkManager-openvpn
   - NetworkManager-openconnect
+  - firewall-config
   - bluez
   - bluez-tools
   - blueman
@@ -49,41 +46,52 @@ install:
   - gvfs-mtp
   - gvfs-smb
   - file-roller
+  # cli
   - trash-cli
   - udiskie
   - imv
   - unrar
   - zenity
+  # Apps
+  # bar
+  - waybar
+  # launcher
+  - rofi-wayland
   - system-config-printer
+  - gnome-disk-utility
+  # clipboard
+  - wl-clipboard
   # Screenshot
   - slurp
   - grim
   # display
   - wlr-randr
   - wlsunset
+  # notebook
+  - power-profiles-daemon
   - brightnessctl
   - kanshi
+  # logout
   - wlogout
   # terminal
   # - alacritty
   - stow
   # notifications
   - dunst
-  # - SwayNotificationCenter
-  # clipboard
-  - cliphist
   # Themes and Icons
   - qt5ct
   - qt6ct
   - kvantum
   - adwaita-qt5
   - adw-gtk3-theme
-  - fontawesome-fonts-all
   - gnome-themes-extra
   - gnome-icon-theme
   - paper-icon-theme
   - breeze-icon-theme
   - papirus-icon-theme
+  # Fonts
+  - google-noto-emoji-fonts
+  - fontawesome-fonts-all
   # Window Manager
   - hyprland
   - hyprlang
@@ -92,7 +100,6 @@ install:
   - hypridle
   - hyprlock
   - xdg-desktop-portal-hyprland
-  - hyprpolkitagent
   # SDDM
   - sddm
   - sddm-themes

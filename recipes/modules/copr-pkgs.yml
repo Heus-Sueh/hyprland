@@ -1,0 +1,6 @@
+# Copr Packages
+type: rpm-ostree
+repos:
+  - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-41/solopasha-hyprland-fedora-41.repo
+install:
+  - cliphist
