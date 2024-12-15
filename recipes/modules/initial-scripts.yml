@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: script
-snippets:
+snippets: []
   # - "curl https://example.com/examplebinary > /usr/bin/examplebinary" # example: download binary
 scripts:
   - installandroidudev.sh

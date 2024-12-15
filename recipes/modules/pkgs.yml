@@ -114,4 +114,4 @@ install:
   - qt5-qtgraphicaleffects
   - qt5-qtquickcontrols2
   # Others
-remove: {}
+remove: []

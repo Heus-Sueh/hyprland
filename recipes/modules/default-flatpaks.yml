@@ -22,5 +22,5 @@ system:
 
     # only normal flatpak applications are (like Floorp Lightning web browser in this example).
     # Installing different branches of the same Flatpak is not supported.
-  remove:
+  remove: []
     # - org.gnome.eog

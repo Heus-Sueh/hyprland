@@ -54,16 +54,16 @@ modules:
         - virtnetworkd.socket
         - virtstoraged.socket
         - virtnodedevd.socket
-      disabled:
+      disabled: []
         # - flatpak-system-update.timer
     user:
-      enabled:
+      enabled: []
         # - my-custom.service
-      disabled:
+      disabled: []
         # - flatpak-user-update.timer
   # ----------------------------------------------------------------------- #
   - type: script
-    snippets:
+    snippets: []
       # - "curl https://example.com/examplebinary > /usr/bin/examplebinary" # example: download binary
-    scripts:
+    scripts: []
       # - mysript.sh
