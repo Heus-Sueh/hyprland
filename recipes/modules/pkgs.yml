@@ -1,3 +1,5 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 # Native Packages
 type: rpm-ostree
 install:
@@ -112,4 +114,4 @@ install:
   - qt5-qtgraphicaleffects
   - qt5-qtquickcontrols2
   # Others
-remove:
+remove: {}

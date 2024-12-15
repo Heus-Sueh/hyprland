@@ -1,3 +1,5 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 name: hyprland
 description: This is my personal OS image.
 base-image: quay.io/fedora-ostree-desktops/base-atomic
