@@ -17,6 +17,11 @@ modules:
       - ddcutil
       - flatpak-builder
       - pipx
+      # Libs
+      # GTK Stuff
+      - gtk4
+      - gobject-introspection-devel
+      - cairo-gobject-devel
       # Terminal Tools
       - fastfetch
       - tealdeer
