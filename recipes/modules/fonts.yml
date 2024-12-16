@@ -5,8 +5,11 @@ fonts:
   nerd-fonts:
     - FiraCode # don't add spaces or "Nerd Font" suffix.
     - JetBrainsMono
+    - Iosevka
+    - MesloLG
     - NerdFontsSymbolsOnly
   google-fonts:
+    - Noto Emoji
     - Material Symbols Outlined
     - Material Symbols Rounded
     - Material Symbols Sharp

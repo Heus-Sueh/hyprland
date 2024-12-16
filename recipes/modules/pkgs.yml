@@ -80,11 +80,12 @@ install:
   - stow
   # notifications
   - dunst
-  # Themes and Icons
+  # Theme engines
   - qt5ct
   - qt6ct
   - kvantum
-  - adwaita-qt5
+  # Themes packages
+  # - adwaita-qt5 # it looks obsolete
   - adw-gtk3-theme
   - gnome-themes-extra
   - gnome-icon-theme
@@ -92,7 +93,6 @@ install:
   - breeze-icon-theme
   - papirus-icon-theme
   # Fonts
-  - google-noto-emoji-fonts
   - fontawesome-fonts-all
   # Window Manager
   - hyprland
