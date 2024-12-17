@@ -1,15 +1,14 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 # to finish...
-
 modules:
   # ----------------------------------------------------------------------------------------------------------------------------
-  - from-file: modules/ublue-bling.yml
-  - from-file: modules/remove-free-pkgs.yml
-  - from-file: modules/initial-scripts.yml
+  # - from-file: modules/akmods.yml
+  - from-file: modules/scripts.yml
   - from-file: modules/pkgs.yml
   - from-file: modules/copr-pkgs.yml
+  - from-file: modules/default-flatpaks.yml
   - from-file: modules/files.yml
   - from-file: modules/fonts.yml
-  - from-file: modules/default-flatpaks.yml
   - from-file: modules/systemd.yml
+  - from-file: modules/bling.yml

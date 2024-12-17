@@ -1,0 +1,4 @@
+type: akmods
+base: main # if not specified, classic "main" base is used by default
+install:
+  - v4l2loopback

@@ -2,13 +2,13 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 name: hyprland-nvidia
 description: This is my personal OS image.
-base-image: quay.io/fedora-ostree-desktops/base-atomic
+base-image: ghcr.io/ublue-os/base-nvidia
 image-version: 41 # latest is also supported if you want new updates ASAP
 modules:
   # ----------------------------------------------------------------------------------------------------------------------------
   - from-file: modules/common-modules.yml
-  - from-file: modules/nvidia-modules.yml
-  - from-file: modules/final-scripts.yml
+  - from-file: modules/nvidia.yml
+  # - from-file: modules/final-scripts.yml
   # ----------------------------------------------------------------------------------------------------------------------------
   # Signing
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

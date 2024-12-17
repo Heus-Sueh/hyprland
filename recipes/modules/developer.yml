@@ -20,6 +20,7 @@ modules:
       # Libs
       # GTK Stuff
       - gtk4
+      - gtk4-layer-shell
       - gobject-introspection-devel
       - cairo-gobject-devel
       # Terminal Tools
@@ -60,12 +61,10 @@ modules:
         - virtstoraged.socket
         - virtnodedevd.socket
       disabled: []
-        # - flatpak-system-update.timer
     user:
       enabled: []
         # - my-custom.service
       disabled: []
-        # - flatpak-user-update.timer
   # ----------------------------------------------------------------------- #
   - type: script
     snippets: []

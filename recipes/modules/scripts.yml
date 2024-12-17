@@ -5,7 +5,6 @@ snippets: []
   # - "curl https://example.com/examplebinary > /usr/bin/examplebinary" # example: download binary
 scripts:
   - installandroidudev.sh
-  - installrpmfusion.sh
   - ensureautoupdates.sh
   - xdg-terminal-exec.sh
   # - example.sh # example: run files/scripts/example.sh

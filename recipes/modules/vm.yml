@@ -10,3 +10,11 @@ modules:
       - virtualbox-guest-additions
       - spice-vdagent
       - spice-webdavd
+  # Scripts
+  - type: script
+    snippets: []
+      # - "mv example example2"
+    scripts: []
+      # - example.sh
+  - type: yafti
+  # ----------------------------------------------------------------------------------------------------------------------------
