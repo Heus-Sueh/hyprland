@@ -19,10 +19,10 @@ modules:
       - pipx
       # Libs
       # GTK Stuff
-      - gtk4
-      - gtk4-layer-shell
-      - gobject-introspection-devel
-      - cairo-gobject-devel
+      # - gtk4
+      # - gtk4-layer-shell
+      # - gobject-introspection-devel
+      # - cairo-gobject-devel
       # Terminal Tools
       - fastfetch
       - tealdeer
