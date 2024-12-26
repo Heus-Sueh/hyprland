@@ -85,7 +85,6 @@ install:
   - qt6ct
   - kvantum
   # Themes packages
-  # - adwaita-qt5 # it looks obsolete
   - adw-gtk3-theme
   - gnome-themes-extra
   - gnome-icon-theme

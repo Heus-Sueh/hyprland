@@ -28,25 +28,8 @@ jobs:
           - recipe-nvidia.yml
           - recipe-dx-nvidia.yml
           - recipe-vm.yml
+          - recipe-testing-nvidia.yml
     steps:
-      - name: Gather image data from recipe
-        run: |
-          echo "IMAGE_NAME=$(grep '^name:' ./recipes/${{ matrix.recipe }} | sed 's/^name: //')" >> $GITHUB_ENV
-          echo "IMAGE_MAJOR_VERSION=$(grep '^image-version:' ./recipes/${{ matrix.recipe }} | sed 's/^image-version: //')" >> $GITHUB_ENV
-          BASE_IMAGE=$(grep '^base-image:' ./recipes/${{ matrix.recipe }} | sed 's/^base-image: //')
-          echo "BASE_IMAGE_NAME=$(echo $BASE_IMAGE | sed 's/.*\/.*\///')" >> $GITHUB_ENV
-
-      - name: Validate kernel and kmod versions
-        run: |
-          set -eo pipefail
-          linux=$(skopeo inspect docker://ghcr.io/ublue-os/main-kernel:41 | jq -r '.Labels["ostree.linux"]')
-          AKMODS_KERNEL_VERSION=$(skopeo inspect docker://ghcr.io/ublue-os/akmods:main-41 | jq -r '.Labels["ostree.linux"]')
-          if [[ "${linux}" != "${AKMODS_KERNEL_VERSION}" ]]; then
-            echo "Kernel Versions do not match between AKMODS and Cached-Kernel."
-            exit 1
-          fi
-          echo "KERNEL_VERSION=$linux" >> $GITHUB_ENV
-
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8

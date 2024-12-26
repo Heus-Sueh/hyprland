@@ -7,27 +7,21 @@ modules:
       - docker-ce.repo
       - mise.repo
     install:
+      - dbus-x11
+      # cli
+      - git-credential-libsecret
       - gh
       - mise
       - neovim
-      - code
       - gcc
-      - clang
       - genisoimage
       - ddcutil
       - flatpak-builder
       - pipx
-      # Libs
-      # GTK Stuff
-      # - gtk4
-      # - gtk4-layer-shell
-      # - gobject-introspection-devel
-      # - cairo-gobject-devel
-      # Terminal Tools
+      - evtest
       - fastfetch
       - tealdeer
       - bat
-      - ugrep
       - ripgrep
       - zoxide
       - zsh
@@ -36,6 +30,15 @@ modules:
       - eza
       - direnv
       - android-tools
+      - rclone
+      # Apps
+      - code
+      # Libs
+      # GTK Stuff
+      # - gtk4
+      # - gtk4-layer-shell
+      # - gobject-introspection-devel
+      # - cairo-gobject-devel
       # Net and VPN
       - tailscale
       # Virtual Machine

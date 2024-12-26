@@ -6,7 +6,7 @@ modules:
   # - from-file: modules/akmods.yml
   - from-file: modules/scripts.yml
   - from-file: modules/pkgs.yml
-  - from-file: modules/copr-pkgs.yml
+  - from-file: modules/extra-pkgs.yml
   - from-file: modules/default-flatpaks.yml
   - from-file: modules/files.yml
   - from-file: modules/fonts.yml

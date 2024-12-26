@@ -1,0 +1,10 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+modules:
+  - type: script
+    snippets: []
+      # - "curl https://example.com/examplebinary > /usr/bin/examplebinary" # example: download binary
+    scripts:
+      - hwe-firmware.sh
+      - hwe-additions.sh
+      # - example.sh # example: run files/scripts/example.sh

@@ -1,6 +1,10 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 modules:
+  # - type: akmods
+  #   base: main # if not specified, classic "main" base is used by default
+  #   install:
+  #     - nvidia
   - type: script
     scripts:
       - nvidia.sh
