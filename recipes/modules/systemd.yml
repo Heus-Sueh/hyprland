@@ -4,4 +4,3 @@ type: systemd
 system:
   enabled:
     - sddm-boot.service
-    - dconf-update.service
