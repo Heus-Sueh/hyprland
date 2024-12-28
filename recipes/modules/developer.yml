@@ -19,15 +19,8 @@ modules:
       - flatpak-builder
       - pipx
       - evtest
-      - fastfetch
-      - tealdeer
-      - bat
-      - ripgrep
-      - zoxide
       - zsh
       - yq
-      - fd-find
-      - eza
       - direnv
       - android-tools
       - rclone
@@ -65,12 +58,15 @@ modules:
         - virtnodedevd.socket
       disabled: []
     user:
-      enabled: []
+      enabled:
+        []
         # - my-custom.service
       disabled: []
   # ----------------------------------------------------------------------- #
   - type: script
-    snippets: []
+    snippets:
+      []
       # - "curl https://example.com/examplebinary > /usr/bin/examplebinary" # example: download binary
-    scripts: []
+    scripts:
+      []
       # - mysript.sh

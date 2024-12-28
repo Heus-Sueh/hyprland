@@ -8,8 +8,8 @@ install:
   - xwaylandvideobridge
   # polkit
   - polkit
-  - xfce-polkit 
-  - fprintd-pam 
+  - xfce-polkit
+  - fprintd-pam
   - gnome-keyring
   - gnome-keyring-pam
   # xdg
@@ -49,6 +49,13 @@ install:
   - gvfs-smb
   - file-roller
   # cli
+  - zoxide
+  - fastfetch
+  - tealdeer
+  - bat
+  - ripgrep
+  - fd-find
+  - eza
   - trash-cli
   - udiskie
   - imv
