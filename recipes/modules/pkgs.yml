@@ -52,10 +52,10 @@ install:
   - zoxide
   - fastfetch
   - tealdeer
+  - eza
   - bat
   - ripgrep
   - fd-find
-  - eza
   - trash-cli
   - udiskie
   - imv
