@@ -23,12 +23,11 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - recipe.yml
-          - recipe-dx.yml
-          - recipe-nvidia.yml
-          - recipe-dx-nvidia.yml
-          - recipe-vm.yml
-          - recipe-testing-nvidia.yml
+          - hyprland/hyprland.yml
+          - hyprland/hyprland-dx.yml
+          - hyprland/hyprland-nvidia.yml
+          - hyprland/hyprland-dx-nvidia.yml
+          - hyprland/hyprland-vm.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
