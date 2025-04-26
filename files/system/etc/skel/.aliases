@@ -96,7 +96,6 @@ alias seef="bat"
 alias help="man"
 alias cls="clear"
 alias xkill="pkill -i"
-alias pkg="rpm-ostree"
 # alias chmod commands
 alias mkexe='chmod a+x'
 alias mx='chmod a+x'
@@ -109,6 +108,7 @@ alias 777='chmod -R 777'
 alias mktar='tar -cvf'
 alias mkbz2='tar -cvjf'
 alias mkgz='tar -cvzf'
+alias mkrar='rar a -r'
 alias untar='tar -xvf'
 alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
