@@ -105,8 +105,8 @@ install:
   - hyprlang
   - hyprcursor
   - hyprpaper
-  - hypridle
-  - hyprlock
+  # - hypridle
+  # - hyprlock
   - xdg-desktop-portal-hyprland
   # SDDM
   - sddm
