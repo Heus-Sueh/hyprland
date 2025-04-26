@@ -6,7 +6,7 @@
 	<submenu></submenu>
 	<unique-id>1708198417972650-1</unique-id>
 	<command>xdg-terminal-exec</command>
-	<description>Open the terminal in this directory</description>
+	<description>Example for a custom action</description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>
@@ -30,6 +30,22 @@
 	<unique-id>1725291634393236-2</unique-id>
 	<command>ln -s %f &apos;Link to %n&apos;</command>
 	<description>Create a symLink</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>edit-copy</icon>
+	<name>Copy path</name>
+	<submenu></submenu>
+	<unique-id>1745165290125759-1</unique-id>
+	<command>wl-copy %f</command>
+	<description>Copy the absolute path</description>
 	<range>*</range>
 	<patterns>*</patterns>
 	<directories/>
