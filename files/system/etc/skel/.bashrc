@@ -64,6 +64,13 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
+
+add_paths() {
+  for d in "$@"; do
+    [[ -d "$d" && ! "$PATH" =~ (^|:)$d(:|$) ]] && PATH="$PATH:$d"
+  done
+}
+
 # Functions
 extract() {
 	for archive in "$@"; do
@@ -89,8 +96,7 @@ extract() {
 }
 
 # Path
-export PATH=$PATH:"$HOME/.local/bin"
-export PATH=$PATH:"$HOME/.cargo/bin"
+add_paths $HOME/.cargo/bin $HOME/.local/bin
 
 export GOPATH=$HOME/.go
 export GOMODCACHE=$HOME/.go/pkg/mod
