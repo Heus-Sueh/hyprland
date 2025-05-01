@@ -1,0 +1,158 @@
+type: dnf
+repos:
+  cleanup: false # clean up added repos after module is done
+  files:
+    # - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+    # - custom-file.repo # file path for /files/dnf/custom-file.repo
+    - terra.repo
+  copr:
+    - lizardbyte/stable
+  # Put any repo GPG keys here
+  keys:  
+    # - https://example.com/repo-1.asc
+    # - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+    # - key2.asc
+optfix:
+  # - brave.com
+  # - enpass
+  # - zoom
+nonfree: negativo17
+
+
+# -------------- #
+install:
+  skip-unavailable: true # skip unavailable packages
+  install-weak-deps: false # Whether to install weak/recommended dependencies.
+  packages:
+    # - repo: copr:copr.fedorainfracloud.org:custom-user:custom-repo
+    - repo: https://repos.fyralabs.com/terra$releasever
+      packages:
+        - cliphist
+    - repo: copr:copr.fedorainfracloud.org/solopasha/hyprland
+      packages: 
+        # Window Manager
+        - hyprland
+        - hyprlang
+        - hyprcursor
+        - hyprpaper
+        - hypridle
+        - hyprlock
+        - xdg-desktop-portal-hyprland
+    # - https://zoom.us/client/latest/zoom_x86_64.rpm
+    # - https://code.visualstudio.com/sha/download?build=stable&os=linux-rpm-x64
+    # - ungoogled-chromium
+
+    # x11
+    - xorg-x11-server-Xwayland
+    - xwaylandvideobridge
+    # polkit
+    - polkit
+    - xfce-polkit
+    - fprintd-pam
+    - gnome-keyring
+    - gnome-keyring-pam
+    # xdg
+    - xdg-desktop-portal
+    - xdg-desktop-portal-gtk
+    - xdg-user-dirs
+    # dbus
+    - dbus-tools
+    - dbus-daemon
+    # vulkan
+    - vulkan-validation-layers
+    - vulkan-tools
+    # Audio & Media
+    - pavucontrol
+    - playerctl
+    - wireplumber
+    - pipewire
+    - pamixer
+    - pulseaudio-utils
+    # Network & Bluetooth
+    - network-manager-applet
+    - NetworkManager-openvpn
+    - NetworkManager-openconnect
+    - firewall-config
+    - bluez
+    - bluez-tools
+    - blueman
+    # File Manager
+    - thunar
+    - thunar-archive-plugin
+    - thunar-volman
+    - gvfs-fuse
+    - gvfs-archive
+    - gvfs-gphoto2
+    - gvfs-nfs
+    - gvfs-mtp
+    - gvfs-smb
+    - file-roller
+    # cli
+    - zoxide
+    - fastfetch
+    - tealdeer
+    - eza
+    - bat
+    - ripgrep
+    - fd-find
+    - trash-cli
+    - udiskie
+    - imv
+    - rar
+    - unrar
+    - zenity
+    # Apps
+    # bar
+    - waybar
+    # launcher
+    - rofi-wayland
+    - system-config-printer
+    - gnome-disk-utility
+    # clipboard
+    - wl-clipboard
+    # Screenshot
+    - slurp
+    - grim
+    # display
+    - wlr-randr
+    - wlsunset
+    # notebook
+    - power-profiles-daemon
+    - brightnessctl
+    - kanshi
+    # logout
+    - wlogout
+    # terminal
+    - stow
+    # notifications
+    - dunst
+    # Theme engines
+    - qt5ct
+    - qt6ct
+    - kvantum
+    # Themes packages
+    - adw-gtk3-theme
+    - gnome-themes-extra
+    - gnome-icon-theme
+    - paper-icon-theme
+    - breeze-icon-theme
+    - papirus-icon-theme
+    # Fonts
+    - fontawesome-fonts-all
+    # SDDM
+    - sddm
+    - sddm-themes
+    # QT Stuff
+    - qt5-qtwayland
+    - qt6-qtwayland
+    - qt5-qtsvg
+    - qt6-qtsvg
+    - qt6-qt5compat
+    - qt5-qtgraphicaleffects
+    - qt5-qtquickcontrols2
+  # Others
+remove:
+  auto-remove: true # remove the specific package and dependencies
+  packages: [ ]
+    # - firefox
+    # - firefox-langpacks

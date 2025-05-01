@@ -3,5 +3,5 @@
 modules:
     - type: script
       scripts:
-        - removeunusedrepos.sh
+        # - removeunusedrepos.sh
         - regenerateinitramfs.sh

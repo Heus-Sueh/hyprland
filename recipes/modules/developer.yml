@@ -1,11 +1,20 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 modules:
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      - vscode.repo
-      - docker-ce.repo
-      - mise.repo
+      files:
+        - vscode.repo
+        - docker-ce.repo
+        - https://mise.jdx.dev/rpm/mise.repo
+
+    group-install:
+      with-optional: true # install optional packages from group
+      packages:
+        - admin-tools
+        - headless-management
+        - c-development
+
     install:
       - dbus-x11
       # cli
@@ -28,10 +37,10 @@ modules:
       - code
       # Libs
       # GTK Stuff
-      # - gtk4
-      # - gtk4-layer-shell
-      # - gobject-introspection-devel
-      # - cairo-gobject-devel
+      - gtk4
+      - gtk4-layer-shell
+      - gobject-introspection-devel
+      - cairo-gobject-devel
       # Net and VPN
       - tailscale
       # Virtual Machine
