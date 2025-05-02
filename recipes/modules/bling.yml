@@ -3,7 +3,6 @@
 modules:
   - type: bling
     install:
-      - rpmfusion # install RPMFusion repos, including tainted repos & disable negativo17 repos if installed
       - dconf-update-service # a service unit that updates the dconf db on boot
 
 #  - type: gschema-overrides
