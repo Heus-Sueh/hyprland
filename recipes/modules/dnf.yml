@@ -1,4 +1,5 @@
- # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: dnf
 repos:
   cleanup: false # clean up added repos after module is done
@@ -8,37 +9,36 @@ repos:
     - terra.repo
   copr:
     - lizardbyte/stable
+    - solopasha/hyprland
   # Put any repo GPG keys here
-  keys:  
+  keys: []  
     # - https://example.com/repo-1.asc
     # - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     # - key2.asc
-optfix:
+  nonfree: negativo17
+# --------------------------------------------------------------------- #
+optfix: []
   # - brave.com
   # - enpass
   # - zoom
-nonfree: negativo17
 
-
-# -------------- #
+# --------------------------------------------------------------------- #
 install:
   skip-unavailable: true # skip unavailable packages
   install-weak-deps: false # Whether to install weak/recommended dependencies.
   packages:
     # - repo: copr:copr.fedorainfracloud.org:custom-user:custom-repo
-    - repo: https://repos.fyralabs.com/terra$releasever
-      packages:
-        - cliphist
-    - repo: copr:copr.fedorainfracloud.org/solopasha/hyprland
-      packages: 
-        # Window Manager
-        - hyprland
-        - hyprlang
-        - hyprcursor
-        - hyprpaper
-        - hypridle
-        - hyprlock
-        - xdg-desktop-portal-hyprland
+    # - repo: https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/
+    # - repo: copr:copr.fedorainfracloud.org:solopasha:hyprland
+    #   packages: 
+    # Window Manager
+    - hyprland
+    - hyprlang
+    - hyprcursor
+    - hyprpaper
+    - hypridle
+    - hyprlock
+    - xdg-desktop-portal-hyprland
     # - https://zoom.us/client/latest/zoom_x86_64.rpm
     # - https://code.visualstudio.com/sha/download?build=stable&os=linux-rpm-x64
     # - ungoogled-chromium
@@ -111,6 +111,7 @@ install:
     - gnome-disk-utility
     # clipboard
     - wl-clipboard
+    - cliphist
     # Screenshot
     - slurp
     - grim
@@ -152,8 +153,8 @@ install:
     - qt5-qtgraphicaleffects
     - qt5-qtquickcontrols2
   # Others
-remove:
-  auto-remove: true # remove the specific package and dependencies
-  packages: [ ]
-    # - firefox
-    # - firefox-langpacks
+# remove:
+#   auto-remove: true # remove the specific package and dependencies
+#   packages: [ ]
+#     # - firefox
+#     # - firefox-langpacks

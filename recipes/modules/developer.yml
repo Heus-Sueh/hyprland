@@ -8,6 +8,58 @@ modules:
         - docker-ce.repo
         - https://mise.jdx.dev/rpm/mise.repo
 
+    install:
+      skip-unavailable: true # skip unavailable packages
+      install-weak-deps: false # Whether to install weak/recommended dependencies.
+      packages:
+        - dbus-x11
+        # cli
+        - git-credential-libsecret
+        - gh
+        - mise
+        - neovim
+        - gcc
+        - genisoimage
+        - ddcutil
+        - flatpak-builder
+        - pipx
+        - evtest
+        - zsh
+        - yq
+        - direnv
+        - android-tools
+        - rclone
+        # docker
+        - docker-client
+        - docker-ce 
+        - docker-ce-cli 
+        - containerd.io
+        - docker-buildx-plugin 
+        - docker-compose-plugin
+        # Apps
+        - code
+        # Libs
+        # GTK Stuff
+        - gtk4
+        - gtk4-layer-shell
+        - gobject-introspection-devel
+        - cairo-gobject-devel
+        # Net and VPN
+        - tailscale
+        # Virtual Machine
+        - libvirt
+        - virt-manager
+        - virt-viewer
+        - qemu
+        - qemu-char-spice
+        - qemu-device-display-virtio-gpu
+        - qemu-device-display-virtio-vga
+        - qemu-device-usb-redirect
+        - qemu-img
+        - qemu-system-x86-core
+        - qemu-user-binfmt
+        - qemu-user-static
+
     group-install:
       with-optional: true # install optional packages from group
       packages:
@@ -15,47 +67,6 @@ modules:
         - headless-management
         - c-development
 
-    install:
-      - dbus-x11
-      # cli
-      - git-credential-libsecret
-      - gh
-      - mise
-      - neovim
-      - gcc
-      - genisoimage
-      - ddcutil
-      - flatpak-builder
-      - pipx
-      - evtest
-      - zsh
-      - yq
-      - direnv
-      - android-tools
-      - rclone
-      # Apps
-      - code
-      # Libs
-      # GTK Stuff
-      - gtk4
-      - gtk4-layer-shell
-      - gobject-introspection-devel
-      - cairo-gobject-devel
-      # Net and VPN
-      - tailscale
-      # Virtual Machine
-      - libvirt
-      - virt-manager
-      - virt-viewer
-      - qemu
-      - qemu-char-spice
-      - qemu-device-display-virtio-gpu
-      - qemu-device-display-virtio-vga
-      - qemu-device-usb-redirect
-      - qemu-img
-      - qemu-system-x86-core
-      - qemu-user-binfmt
-      - qemu-user-static
   # SystemD
   - type: systemd
     system:
