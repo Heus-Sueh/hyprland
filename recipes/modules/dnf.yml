@@ -25,7 +25,7 @@ optfix: []
 # --------------------------------------------------------------------- #
 install:
   skip-unavailable: true # skip unavailable packages
-  install-weak-deps: false # Whether to install weak/recommended dependencies.
+  install-weak-deps: true # Whether to install weak/recommended dependencies.
   packages:
     # - repo: copr:copr.fedorainfracloud.org:custom-user:custom-repo
     # - repo: https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/

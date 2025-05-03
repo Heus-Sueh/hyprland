@@ -1,15 +1,22 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 modules:
-  # some good packages
-  - type: rpm-ostree
+  - type: dnf
+    repos:
+      files: []
+        # - filename.repo
+        # - https://urlname.repo
+
     install:
-      - open-vm-tools
-      - open-vm-tools-desktop
-      - qemu-guest-agent
-      - virtualbox-guest-additions
-      - spice-vdagent
-      - spice-webdavd
+      skip-unavailable: true # skip unavailable packages
+      install-weak-deps: true # whether to install weak/recommended dependencies.
+      packages:
+        - open-vm-tools
+        - open-vm-tools-desktop
+        - qemu-guest-agent
+        - virtualbox-guest-additions
+        - spice-vdagent
+        - spice-webdavd
   # Scripts
   - type: script
     snippets: []

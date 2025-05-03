@@ -1,4 +1,16 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 modules:
-  # some good packages
+  - type: dnf
+    repos:
+      files: []
+        # - filename.repo
+        # - https://urlname.repo
+
+    install:
+      skip-unavailable: true # skip unavailable packages
+      install-weak-deps: true # Whether to install weak/recommended dependencies.
+      packages:
+        # some good packages
+        - umu-launcher
+        - steam
