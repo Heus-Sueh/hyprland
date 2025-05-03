@@ -125,6 +125,7 @@ install:
     # logout
     - wlogout
     # terminal
+    - kitty
     - stow
     # notifications
     - dunst
