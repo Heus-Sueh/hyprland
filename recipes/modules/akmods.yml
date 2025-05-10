@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: akmods
-base: main # if not specified, classic "main" base is used by default
-nvidia: true
-install: []
+base: bazzite # if not specified, classic "main" base is used by default
+install: 
+  - v4l2loopback
