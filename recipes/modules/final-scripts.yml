@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 modules:
-    - type: script
-      scripts:
-        # - removeunusedrepos.sh
-        - regenerateinitramfs.sh
+  - type: script
+    scripts:
+      # - removeunusedrepos.sh
+      - regenerateinitramfs.sh

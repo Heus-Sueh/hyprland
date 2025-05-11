@@ -8,3 +8,4 @@ modules:
   - type: script
     scripts:
       - nvidia.sh
+      - setearlyloading.sh

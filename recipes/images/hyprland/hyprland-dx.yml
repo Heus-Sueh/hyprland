@@ -10,6 +10,10 @@ modules:
   - from-file: modules/developer.yml
   # - from-file: modules/final-scripts.yml
   # ----------------------------------------------------------------------------------------------------------------------------
+  - type: script
+    snippets: []
+    scripts: 
+      - regenerateinitramfs.sh
   # Signing
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
   # ----------------------------------------------------------------------------------------------------------------------------
