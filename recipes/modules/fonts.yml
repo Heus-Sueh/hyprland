@@ -2,8 +2,9 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: fonts
 fonts:
+# https://www.nerdfonts.com/font-downloads
   nerd-fonts:
-    - FiraCode # don't add spaces or "Nerd Font" suffix.
+    # - FiraCode # don't add spaces or "Nerd Font" suffix.
     - JetBrainsMono
     - Iosevka
     - NerdFontsSymbolsOnly

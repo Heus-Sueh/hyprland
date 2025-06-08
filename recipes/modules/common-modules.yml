@@ -4,6 +4,7 @@
 modules:
   # ----------------------------------------------------------------------------------------------------------------------------
   # - from-file: modules/akmods.yml
+  - from-file: modules/ublue-essential.yml
   - from-file: modules/scripts.yml
   - from-file: modules/dnf.yml
   - from-file: modules/default-flatpaks.yml

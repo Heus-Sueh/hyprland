@@ -1,0 +1,79 @@
+modules:
+    - type: containerfile
+      snippets:
+        - COPY --from=ghcr.io/ublue-os/akmods:main-41 /rpms /tmp/rpms
+        - COPY --from=ghcr.io/ublue-os/akmods:main-41 /kernel-rpms /tmp/rpms/kernel
+        - RUN find /tmp/rpms
+        - RUN rpm -q ublue-os-akmods-addons || rpm-ostree install /tmp/rpms/ublue-os/ublue-os-akmods-addons*.rpm
+    - type: script
+      scripts:
+        - installsignedkernel.sh
+
+    - type: containerfile
+      snippets:
+        - RUN rpm-ostree install just powerstat
+        - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /
+        - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-update-services.noarch.rpm /
+        - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-signing.noarch.rpm /
+        - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-luks.noarch.rpm /
+        - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-just.noarch.rpm /
+        - RUN rpm -ivh /ublue-os-udev-rules.noarch.rpm
+        - RUN rpm -ivh /ublue-os-update-services.noarch.rpm
+        - RUN rpm -ivh /ublue-os-signing.noarch.rpm
+        - RUN rpm -ivh /ublue-os-luks.noarch.rpm
+        - RUN rpm -ivh /ublue-os-just.noarch.rpm
+
+
+    - type: dnf
+      repos:
+        cleanup: true
+        files:
+          - https://negativo17.org/repos/fedora-multimedia.repo
+        keys: []       
+      replace:
+        - from-repo: fedora-multimedia
+          skip-unavailable: true
+          packages:
+            - libheif
+            - libva
+            - libva-intel-media-driver
+            - mesa-dri-drivers
+            - mesa-filesystem
+            - mesa-libEGL
+            - mesa-libGL
+            - mesa-libgbm
+            - mesa-libxatracker
+            - mesa-va-drivers
+            - mesa-vulkan-drivers
+            - gstreamer1-plugin-libav
+            - gstreamer1-plugin-vaapi
+            - rar
+
+
+    - type: dnf
+      install:
+        packages:
+          - heif-pixbuf-loader
+          - ffmpeg
+          - ffmpeg-libs
+          - ffmpegthumbnailer
+          - pipewire-libs-extra
+          - libfdk-aac
+          - gstreamer1-plugins-bad
+          - gstreamer1-plugins-ugly
+      remove:
+        packages:
+          - gstreamer1-plugins-bad-free
+          - gstreamer1-plugins-bad-free-libs
+          - gstreamer1-plugins-ugly-free
+          - gstreamer1-plugin-vaapi
+          - fdk-aac-free
+          - ffmpeg-free
+          - libavcodec-free
+          - libavdevice-free
+          - libavfilter-free
+          - libavformat-free
+          - libavutil-free
+          - libpostproc-free
+          - libswresample-free
+          - libswscale-free

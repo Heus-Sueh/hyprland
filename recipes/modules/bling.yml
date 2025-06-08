@@ -4,7 +4,8 @@ modules:
   - type: bling
     install:
       - dconf-update-service # a service unit that updates the dconf db on boot
-
+      - ublue-update
+      - rpmfusion
 #  - type: gschema-overrides
 #    include: []
 # - custom-theme.gschema.override
