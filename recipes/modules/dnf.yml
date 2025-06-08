@@ -15,7 +15,7 @@ repos:
     # - https://example.com/repo-1.asc
     # - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     # - key2.asc
-  nonfree: negativo17
+  # nonfree: negativo17
 # --------------------------------------------------------------------- #
 optfix: []
   # - brave.com
