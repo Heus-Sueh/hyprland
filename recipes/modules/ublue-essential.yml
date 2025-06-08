@@ -24,30 +24,9 @@ modules:
         - RUN rpm -ivh /ublue-os-just.noarch.rpm
 
 
-    - type: dnf
-      repos:
-        cleanup: true
-        files:
-          - https://negativo17.org/repos/fedora-multimedia.repo
-        keys: []       
-      replace:
-        - from-repo: fedora-multimedia
-          skip-unavailable: true
-          packages:
-            - libheif
-            - libva
-            - libva-intel-media-driver
-            - mesa-dri-drivers
-            - mesa-filesystem
-            - mesa-libEGL
-            - mesa-libGL
-            - mesa-libgbm
-            - mesa-libxatracker
-            - mesa-va-drivers
-            - mesa-vulkan-drivers
-            - gstreamer1-plugin-libav
-            - gstreamer1-plugin-vaapi
-            - rar
+    - type: scripts
+      scripts:
+        - installproprietarypackages.sh
 
 
     - type: dnf
