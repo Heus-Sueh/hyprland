@@ -27,6 +27,7 @@ modules:
     - type: script
       scripts:
         - installproprietarypackages.sh
+        - fixupstreamicdloader.sh
 
     - type: dnf
       install:
