@@ -24,10 +24,9 @@ modules:
         - RUN rpm -ivh /ublue-os-just.noarch.rpm
 
 
-    - type: scripts
+    - type: script
       scripts:
         - installproprietarypackages.sh
-
 
     - type: dnf
       install:
