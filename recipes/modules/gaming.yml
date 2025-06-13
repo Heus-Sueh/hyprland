@@ -3,9 +3,17 @@
 modules:
   - type: dnf
     repos:
-      files: []
+      files:
+        []
         # - filename.repo
         # - https://urlname.repo
+      copr:
+        enable:
+          - bieszczaders/kernel-cachyos
+    replace:
+      - from-repo: copr:copr.fedorainfracloud.org:custom-user:custom-repo
+        packages:
+          - package-1
 
     install:
       skip-unavailable: true # skip unavailable packages

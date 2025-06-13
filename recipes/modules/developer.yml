@@ -63,10 +63,9 @@ modules:
         - qemu-user-static
 
     group-install:
-      with-optional: true # install optional packages from group
+      with-optional: false # install optional packages from group
       packages:
-        - admin-tools
-        - headless-management
+        # - headless-management
         - c-development
 
   # SystemD

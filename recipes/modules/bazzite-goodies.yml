@@ -1,0 +1,76 @@
+modules:
+  - type: containerfile
+    snippets:
+      - |
+        RUN --mount=type=cache,dst=/var/cache \
+            --mount=type=cache,dst=/var/log \
+            --mount=type=bind,from=akmods,src=/kernel-rpms,dst=/tmp/kernel-rpms \
+            --mount=type=bind,from=akmods,src=/rpms,dst=/tmp/akmods-rpms \
+            --mount=type=bind,from=akmods-extra,src=/rpms,dst=/tmp/akmods-extra-rpms \
+            --mount=type=bind,from=ctx,source=/,target=/ctx \
+            --mount=type=tmpfs,dst=/tmp \
+            /ctx/install-kernel-akmods && \
+            dnf5 -y config-manager setopt "*rpmfusion*".enabled=0 && \
+            dnf5 -y copr enable bieszczaders/kernel-cachyos-addons && \
+            dnf5 -y install scx-scheds && \
+            dnf5 -y copr disable bieszczaders/kernel-cachyos-addons && \
+            dnf5 -y swap --repo copr:copr.fedorainfracloud.org:bazzite-org:bazzite bootc bootc && \
+            /ctx/cleanup
+
+      - |
+        # Install patched fwupd
+        # Install Valve's patched Mesa, Pipewire, Bluez, and Xwayland
+        # Install patched switcheroo control with proper discrete GPU support
+        RUN --mount=type=cache,dst=/var/cache \
+            --mount=type=cache,dst=/var/log \
+            --mount=type=bind,from=ctx,source=/,target=/ctx \
+            --mount=type=tmpfs,dst=/tmp \
+            declare -A toswap=( \
+              ["copr:copr.fedorainfracloud.org:bazzite-org:bazzite"]="wireplumber" \
+              ["copr:copr.fedorainfracloud.org:bazzite-org:bazzite-multilib"]="pipewire bluez xorg-x11-server-Xwayland" \
+              ["terra-extras"]="switcheroo-control" \
+              ["terra-mesa"]="mesa-filesystem" \
+              ["copr:copr.fedorainfracloud.org:ublue-os:staging"]="fwupd" \
+            ) && \
+            for repo in "${!toswap[@]}"; do \
+              for package in ${toswap[$repo]}; do \
+                dnf5 -y swap --repo=$repo $package $package; \
+              done; \
+            done && \
+            unset -v toswap repo package && \
+            dnf5 versionlock add \
+              pipewire \
+              pipewire-alsa \
+              pipewire-gstreamer \
+              pipewire-jack-audio-connection-kit \
+              pipewire-jack-audio-connection-kit-libs \
+              pipewire-libs \
+              pipewire-plugin-libcamera \
+              pipewire-pulseaudio \
+              pipewire-utils \
+              wireplumber \
+              wireplumber-libs \
+              bluez \
+              bluez-cups \
+              bluez-libs \
+              bluez-obexd \
+              xorg-x11-server-Xwayland \
+              switcheroo-control \
+              mesa-dri-drivers \
+              mesa-filesystem \
+              mesa-libEGL \
+              mesa-libGL \
+              mesa-libgbm \
+              mesa-va-drivers \
+              mesa-vulkan-drivers \
+              fwupd \
+              fwupd-plugin-flashrom \
+              fwupd-plugin-modem-manager \
+              fwupd-plugin-uefi-capsule-data && \
+            dnf5 -y install mesa-va-drivers.i686 && \
+            dnf5 -y install --enable-repo="*rpmfusion*" --disable-repo="*fedora-multimedia*" \
+              libaacs \
+              libbdplus \
+              libbluray \
+              libbluray-utils && \
+            /ctx/cleanup

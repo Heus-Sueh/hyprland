@@ -5,10 +5,10 @@
     "menu": "on-click",
     "menu-file": "/var/home/heus/.config/waybar/xml/powermenu.xml",
     "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
       "suspend": "systemctl suspend",
       "hibernate": "systemctl hibernate",
+      "reboot": "systemctl reboot",
+      "shutdown": "systemctl poweroff",
     },
   },
 }
