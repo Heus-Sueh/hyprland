@@ -25,20 +25,20 @@ optfix: []
 # --------------------------------------------------------------------- #
 install:
   skip-unavailable: true # skip unavailable packages
-  install-weak-deps: true # Whether to install weak/recommended dependencies.
+  install-weak-deps: false # Whether to install weak/recommended dependencies.
   packages:
     # - repo: copr:copr.fedorainfracloud.org:custom-user:custom-repo
     # - repo: https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/
-    # - repo: copr:copr.fedorainfracloud.org:solopasha:hyprland
-    #   packages: 
-    # Window Manager
-    - hyprland
-    - hyprlang
-    - hyprcursor
-    - hyprpaper
-    - hypridle
-    - hyprlock
-    - xdg-desktop-portal-hyprland
+    - repo: copr:copr.fedorainfracloud.org:solopasha:hyprland
+      packages: 
+        # Window Manager
+        - hyprland
+        - hyprlang
+        - hyprcursor
+        - hyprpaper
+        - hypridle
+        - hyprlock
+        - xdg-desktop-portal-hyprland
     # - https://zoom.us/client/latest/zoom_x86_64.rpm
     # - https://code.visualstudio.com/sha/download?build=stable&os=linux-rpm-x64
     # - ungoogled-chromium
@@ -56,6 +56,7 @@ install:
     - xdg-desktop-portal
     - xdg-desktop-portal-gtk
     - xdg-user-dirs
+    - distrobox
     # dbus
     - dbus-tools
     - dbus-daemon
